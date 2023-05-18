@@ -8,11 +8,12 @@ function App() {
     <>
       <h1>Vite + React</h1>
       <div className="card">
-        <button
-          className="bg-purple-500"
-          onClick={() => setCount((count) => count + 1)}>
+        <Button
+          active={true}
+          className={'bg-slate-700'}
+          onClick={() => setCount(count + 1)}>
           count is {count}
-        </button>
+        </Button>
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>
