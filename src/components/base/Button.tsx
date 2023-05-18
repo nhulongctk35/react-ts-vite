@@ -1,16 +1,16 @@
-import { ReactNode } from 'react';
 import cn from 'classnames';
 
 interface ButtonProps {
-  children: ReactNode;
+  children: React.ReactNode;
   className?: string;
   active: boolean;
-  onClick: () => void;
+  onClick: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 }
 
-export function Button({ className, active, children }: ButtonProps) {
+export function Button({ className, active, children, onClick }: ButtonProps) {
   return (
     <button
+      onClick={onClick}
       className={cn(
         className,
         'text-base leading-tight font-bold rounded-full py-2 px-4 focus:outline focus:outline-offset-2 focus:outline-link dark:focus:outline-link-dark inline-flex items-center my-1',
