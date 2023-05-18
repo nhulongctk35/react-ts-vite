@@ -7,6 +7,9 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "postinstall": "patch-package && (is-ci || husky install .husky)",
+    "prettier": "yarn format:source",
+    "prettier:diff": "yarn nit:source",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -25,10 +28,17 @@
     "eslint": "^8.38.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.3.4",
+    "husky": "^8.0.3",
+    "is-ci": "^3.0.1",
+    "lint-staged": "^13.2.2",
+    "prettier": "^2.8.8",
     "typescript": "^5.0.2",
     "vite": "^4.3.2"
   },
   "browserslist": [
     "last 2 version"
-  ]
+  ],
+  "lint-staged": {
+    "*.{js,ts,jsx,tsx,css}": "pnpm prettier"
+  }
 }
