@@ -1,7 +1,9 @@
 import './App.css';
+import { useTranslation } from 'react-i18next';
 
 function App() {
   const [count, setCount] = useState(0);
+  const { t } = useTranslation();
 
   const updateCount = (
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>
@@ -12,6 +14,7 @@ function App() {
   return (
     <>
       <h1>Vite + React</h1>
+      <h2>{t('title')}</h2>
       <div className="card">
         <Button active={true} className={'bg-slate-700'} onClick={updateCount}>
           count is {count}
