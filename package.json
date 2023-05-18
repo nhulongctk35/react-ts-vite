@@ -8,6 +8,7 @@
     "build": "tsc && vite build",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "postinstall": "patch-package && (is-ci || husky install .husky)",
+    "format:source": "prettier --config .prettierrc --write \"src/**/*.{js,ts,jsx,tsx,css}\"",
     "prettier": "yarn format:source",
     "prettier:diff": "yarn nit:source",
     "preview": "vite preview"
